@@ -60,23 +60,22 @@ public abstract class Game {
 				int x = (int)(index * width * 1.5f - offset);
 				int y = (int) (handler.getWindowHeight() / 2 - height / 2 - yOffset);
 				
-				g.setColor(Color.gray);
-				g.fillRect(x, y, width, height);
+				g.drawImage(handler.getAssets().getLoadedImages()[19], x, y, width, height, null);
 				
 				if(desWords == null)
 					return;
 				
-				g.setColor(Color.white);
+				g.setColor(Color.black);
 				Font myFont = new Font("Serif", Font.BOLD, 30);
 				g.setFont(myFont);
 				
 				for(int i = 0; i < desWords.length; i++) {
-					if(x + g.getFontMetrics().stringWidth(desWords[i]) >= width + index * width * 1.5f - offset) {
+					if(x + g.getFontMetrics().stringWidth(desWords[i]) >= width + index * width * 1.5f - offset - 50) {
 						x = (int)(index * width * 1.5f - offset);
 						y += g.getFontMetrics().getHeight();
 					}
 					
-					g.drawString(desWords[i], x, y + g.getFontMetrics().getHeight());
+					g.drawString(desWords[i], x + 25, (int) (y + g.getFontMetrics().getHeight() * 2.5f));
 					x+=g.getFontMetrics().stringWidth(desWords[i] + " ");
 				}
 			}

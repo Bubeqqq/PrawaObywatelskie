@@ -106,6 +106,7 @@ public class Shooting extends Game{
 			
 			update = true;
 			
+			handler.playSound(8);
 			bullets.add(new Bullet(handler, playerX + playerWidth, playerY + playerHeight / 2, x, y, this));
 		}
 		
@@ -191,6 +192,7 @@ public class Shooting extends Game{
 	}
 
 	public void removeWord(Words word) {
+		handler.playSound(9);
 		wordsFound[word.getIndex()] = true;
 		words.remove(word);
 	}

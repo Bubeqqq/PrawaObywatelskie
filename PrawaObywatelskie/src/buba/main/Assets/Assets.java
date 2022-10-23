@@ -11,7 +11,7 @@ public class Assets {
 	private BufferedImage[] loadedImages;
 	
 	public void loadSelectState() {
-		loadedImages = new BufferedImage[19];
+		loadedImages = new BufferedImage[20];
 		
 		SpriteSheet hangman = new SpriteSheet(ImageLoader.LoadImage("/SelectState/hangMan.png"));
 		
@@ -44,6 +44,7 @@ public class Assets {
 		loadedImages[16] = ImageLoader.LoadImage("/SelectState/to_start.jpg");
 		loadedImages[17] = ImageLoader.LoadImage("/SelectState/ikona_powrot.png");
 		loadedImages[18] = ImageLoader.LoadImage("/SelectState/kolko_informacje.png");
+		loadedImages[19] = ImageLoader.LoadImage("/SelectState/table.png");
 
 
 	}

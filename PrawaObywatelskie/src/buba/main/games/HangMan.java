@@ -34,7 +34,7 @@ public class HangMan extends Game{
 		founded = new ArrayList<>();
 		letters = new ArrayList<>();
 		
-		String des = "W tej grze twoim zadaniem jest uzupe³nienie zdania odpowiednim s³owem, tak aby zgadza³o siê ono z danym prawem obywatelskim. Uzupe³niasz s³owo wybieraj¹c pojedyncze litery, za ka¿d¹ b³êdn¹ litere buduje siê czêœæ wisielca. Gra koñczy siê gdy skoñcz¹ ci siê próby lub uda ci sie u³o¿yæ s³owo bez u³o¿enia ca³ego wisielca.";
+		String des = "W tej grze twoim zadaniem jest uzupe³nienie zdania odpowiednim s³owem, tak aby zgadza³o siê ono z danym prawem obywatelskim. Uzupe³niasz s³owo wybieraj¹c pojedyncze litery, za ka¿d¹ b³êdn¹ litere buduje siê czêœæ wisielca.";
 		desWords = des.split(" ");
 	}
 

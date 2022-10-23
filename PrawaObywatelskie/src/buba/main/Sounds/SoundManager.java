@@ -18,7 +18,7 @@ public class SoundManager{
 	private int id;
 	
 	public SoundManager(){
-		sounds = new Clip[8];
+		sounds = new Clip[10];
 		
 		try {
 			sounds[0] = AudioSystem.getClip();
@@ -44,6 +44,12 @@ public class SoundManager{
 			
 			sounds[7] = AudioSystem.getClip();
 			sounds[7].open(AudioSystem.getAudioInputStream(new File("res/Sounds/loss.wav")));
+			
+			sounds[8] = AudioSystem.getClip();
+			sounds[8].open(AudioSystem.getAudioInputStream(new File("res/Sounds/shoot.wav")));
+			
+			sounds[9] = AudioSystem.getClip();
+			sounds[9].open(AudioSystem.getAudioInputStream(new File("res/Sounds/explosion.wav")));
 		} catch (LineUnavailableException | IOException | UnsupportedAudioFileException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
