@@ -170,6 +170,7 @@ public class Maze extends Game{
 		resetWin();
 		map = new int[width][height];
 		
+		handler.getAssets().loadMaze();
 		letters.clear();
 		founded.clear();
 		
@@ -349,6 +350,5 @@ public class Maze extends Game{
 	
 	@Override
 	public void load() {
-		handler.getAssets().loadMaze();
 	}
 }

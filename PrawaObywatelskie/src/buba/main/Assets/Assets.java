@@ -45,8 +45,6 @@ public class Assets {
 		loadedImages[17] = ImageLoader.LoadImage("/SelectState/ikona_powrot.png");
 		loadedImages[18] = ImageLoader.LoadImage("/SelectState/kolko_informacje.png");
 		loadedImages[19] = ImageLoader.LoadImage("/SelectState/table.png");
-
-
 	}
 	
 	public void loadHangman() {
@@ -62,7 +60,7 @@ public class Assets {
 	}
 	
 	public void loadMaze() {
-		loadedImages = new BufferedImage[12];
+		loadedImages = new BufferedImage[16];
 		
 		loadedImages[0] = ImageLoader.LoadImage("/Maze/Car/auto.png");
 		loadedImages[1] = ImageLoader.LoadImage("/Maze/Car/auto2.png");
@@ -81,6 +79,11 @@ public class Assets {
 		for(int i = 1; i < 6; i++) {
 			loadedImages[i + 5] = ImageLoader.LoadImage("/Maze/Buildings/bud" + i + ".jpg");
 		}
+		
+		loadedImages[12] = ImageLoader.LoadImage("/Maze/Arrow/stszauka.png");
+		loadedImages[13] = ImageLoader.LoadImage("/Maze/Arrow/stszaukadul.png");
+		loadedImages[14] = ImageLoader.LoadImage("/Maze/Arrow/stszaukalewo.png");
+		loadedImages[15] = ImageLoader.LoadImage("/Maze/Arrow/stszaukaq.png");
 	}
 	
 	public void loadShooting() {
@@ -101,11 +104,12 @@ public class Assets {
 	}
 	
 	public void loadMenu() {
-		loadedImages = new BufferedImage[3];
+		loadedImages = new BufferedImage[5];
 		
 		loadedImages[0] = ImageLoader.LoadImage("/Menu/to_menu.jpg");
 		loadedImages[1] = ImageLoader.LoadImage("/Menu/play.png");
 		loadedImages[2] = ImageLoader.LoadImage("/Menu/tytul.png");
-
+		loadedImages[3] = ImageLoader.LoadImage("/Menu/dzwiekoff.png");
+		loadedImages[4] = ImageLoader.LoadImage("/Menu/dzwiekon.png");
 	}
 }

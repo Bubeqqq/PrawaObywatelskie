@@ -34,7 +34,7 @@ public class Player {
 		this.maze = maze;
 		this.handler = handler;
 		
-		right = new Button(0, 0, size, size, null, handler) {
+		right = new Button(0, 0, size, size, handler.getAssets().getLoadedImages()[15], handler) {
 			@Override
 			public void onClick() {
 				handler.playSound(2);
@@ -44,7 +44,7 @@ public class Player {
 			}
 		};
 		
-		left = new Button(0, 0, size, size, null, handler) {
+		left = new Button(0, 0, size, size, handler.getAssets().getLoadedImages()[14], handler) {
 			@Override
 			public void onClick() {
 				handler.playSound(2);
@@ -54,7 +54,7 @@ public class Player {
 			}
 		};
 		
-		up = new Button(0, 0, size, size, null, handler) {
+		up = new Button(0, 0, size, size, handler.getAssets().getLoadedImages()[12], handler) {
 			@Override
 			public void onClick() {
 				handler.playSound(2);
@@ -64,7 +64,7 @@ public class Player {
 			}
 		};
 		
-		down = new Button(0, 0, size, size, null, handler) {
+		down = new Button(0, 0, size, size, handler.getAssets().getLoadedImages()[13], handler) {
 			@Override
 			public void onClick() {
 				handler.playSound(2);

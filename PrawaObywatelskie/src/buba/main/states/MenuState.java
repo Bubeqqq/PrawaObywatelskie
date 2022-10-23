@@ -7,7 +7,7 @@ import buba.main.input.Button;
 
 public class MenuState extends State{
 
-	private Button startButton;
+	private Button startButton, muteButton;
 	
 	private final int width = 500, height = 250;
 	
@@ -25,9 +25,13 @@ public class MenuState extends State{
 	
 	private final int defaultY;
 	
+	private boolean mute = false;
+	
 	public MenuState(Handler handler) {
 		super(handler);
 
+		handler.getLoop().getSound().setVolume(0.5f);
+		
 		defaultY = handler.getWindowHeight() / 2 - height / 2;
 		
 		startButton = new Button(handler.getWindowWidth() / 2 - width / 2, handler.getWindowHeight() / 2 - height / 2, width, height, null, handler) {
@@ -36,12 +40,20 @@ public class MenuState extends State{
 				State.setCurrentState(handler.getLoop().getSelectState());
 			}
 		};
+		
+		muteButton = new Button(100, handler.getWindowHeight() - 300, 200, 200, null, handler) {
+			@Override
+			public void onClick(){
+				setMute(!isMute());
+			}
+		};
 	}
 
 	@Override
 	public void tick() {
 		//start Button
 		
+		muteButton.tick();
 		startButton.tick();
 		
 		if(startButton.getBounds().contains(handler.getMouseManager().getMouseX(), handler.getMouseManager().getMouseY())) {
@@ -88,7 +100,7 @@ public class MenuState extends State{
 		g.drawImage(handler.getAssets().getLoadedImages()[2], 0, 0, handler.getWindowWidth(), handler.getWindowHeight(), null);
 
 		startButton.render(g);
-		
+		muteButton.render(g);
 	}
 
 	@Override
@@ -100,5 +112,29 @@ public class MenuState extends State{
 	public void load() {
 		handler.getAssets().loadMenu();
 		startButton.setTexture(handler.getAssets().getLoadedImages()[1]);
+		
+		if(mute) {
+			muteButton.setTexture(handler.getAssets().getLoadedImages()[3]);
+		}else {
+			muteButton.setTexture(handler.getAssets().getLoadedImages()[4]);
+		}
 	}
+	
+	public void setMute(boolean mute) {
+		this.mute = mute;
+		
+		if(mute) {
+			handler.getLoop().getSound().setVolume(0);
+			muteButton.setTexture(handler.getAssets().getLoadedImages()[3]);
+		}else {
+			muteButton.setTexture(handler.getAssets().getLoadedImages()[4]);
+			handler.getLoop().getSound().setVolume(0.5f);
+		}
+	}
+
+	public boolean isMute() {
+		return mute;
+	}
+	
+	
 }
