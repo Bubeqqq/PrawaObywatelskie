@@ -155,6 +155,8 @@ public class Maze extends Game{
 						x += g.getFontMetrics().stringWidth(" ");
 					}
 				}
+				
+				x += g.getFontMetrics().stringWidth(" ");
 			}else {
 				g.drawString(words[i], x, y);
 				x += g.getFontMetrics().stringWidth(words[i] + " ");
